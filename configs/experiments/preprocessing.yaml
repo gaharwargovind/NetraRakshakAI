@@ -1,0 +1,33 @@
+experiment:
+  id: "E002"
+  name: "Preprocessing Evaluation"
+  description: "Compare baseline retinal crop and normalization against CLAHE and future illumination-correction candidates"
+  seed: 42
+  parent_experiment: "E001"
+
+preprocessing_variants:
+
+  baseline:
+    method: "crop_resize_normalize"
+    target_size: [512, 512]
+
+  clahe:
+    method: "crop_resize_clahe_normalize"
+    clip_limit: 2.0
+    tile_grid_size: [8, 8]
+
+  illumination:
+    method: "illumination_normalization"
+    status: "rejected_current_implementation"
+    reason: "Initial local color subtraction produced an undesirable high-pass/edge-like representation during visual audit"
+    sigma: 10.0
+
+evaluation:
+  primary_comparison: "validation_performance"
+  visual_sanity_check: true
+  preserve_test_set: true
+
+notes:
+  - "Visual quality alone does not determine model usefulness."
+  - "CLAHE remains experimental until validation results justify its use."
+  - "The rejected illumination implementation must not be used as the baseline."

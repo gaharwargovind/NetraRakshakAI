@@ -1,0 +1,31 @@
+experiment:
+  id: "E004"
+  name: "Conservative Training Augmentation"
+  description: "Evaluate clinically plausible geometric and photometric augmentation against E003 baseline"
+  seed: 42
+  parent_experiment: "E003"
+
+training:
+  epochs: 30
+  batch_size: 16
+  learning_rate: 0.0003
+  weight_decay: 0.00001
+  optimizer: "AdamW"
+  loss: "weighted_cross_entropy"
+  lr_scheduler: "cosine_annealing"
+  early_stopping_patience: 7
+
+augmentation:
+  horizontal_flip:
+    probability: 0.5
+  rotation:
+    probability: 0.7
+    max_degrees: 10.0
+  affine:
+    probability: 0.5
+    scale_range: [0.96, 1.04]
+    translate_pct: 0.02
+  color_jitter:
+    probability: 0.5
+    brightness_factor_range: [0.95, 1.05]
+    contrast_factor_range: [0.95, 1.05]

@@ -1,0 +1,12 @@
+experiment:
+  id: "E008"
+  name: "Post-Hoc Probability Calibration"
+  description: "Optimize temperature scaling parameter on validation logits"
+  seed: 42
+  parent_experiment: "E006"
+
+calibration:
+  method: "temperature_scaling"
+  num_bins: 10
+  optimization_metric: "nll"
+  target_ece: 0.05

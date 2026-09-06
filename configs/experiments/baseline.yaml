@@ -1,0 +1,25 @@
+experiment:
+  id: "E001"
+  name: "Baseline 5-Class Classifier"
+  description: "Standard pre-trained EfficientNet-B0 with Cross-Entropy Loss"
+  seed: 42
+
+model:
+  backbone: "efficientnet_b0"
+  pretrained: true
+  num_classes: 5
+  dropout_rate: 0.2
+
+training:
+  epochs: 30
+  batch_size: 16
+  learning_rate: 0.0003
+  weight_decay: 0.00001
+  optimizer: "AdamW"
+  loss: "cross_entropy"
+  lr_scheduler: "cosine_annealing"
+  early_stopping_patience: 7
+
+metrics:
+  primary: "macro_f1"
+  secondary: ["quadratic_weighted_kappa", "referable_sensitivity", "referable_specificity"]

@@ -1,0 +1,11 @@
+experiment:
+  id: "E005"
+  name: "Architectural Comparison"
+  description: "Benchmark EfficientNet-B0 vs ResNet-50 vs ConvNeXt-Tiny"
+  seed: 42
+  parent_experiment: "E004"
+
+candidate_backbones:
+  - "efficientnet_b0"
+  - "resnet50"
+  - "convnext_tiny"

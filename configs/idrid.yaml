@@ -1,0 +1,10 @@
+dataset:
+  name: "Indian Diabetic Retinopathy Image Dataset (IDRiD)"
+  raw_dir: "data/raw/idrid"
+  grading_csv: "data/raw/idrid/2. Groundtruths/a. DR_Retinopathy_Grading.csv"
+  image_dir: "data/raw/idrid/1. Original Images/a. Training Set"
+  id_column: "Image name"
+  target_column: "Retinopathy grade"
+  dme_column: "Risk of macular edema "
+  image_extension: ".jpg"
+  lesion_masks_dir: "data/raw/idrid/2. Groundtruths/b. Sub-challenges/All Lesion Contours"

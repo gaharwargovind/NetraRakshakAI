@@ -1,0 +1,47 @@
+project:
+  name: "Explainable AI for Diabetic Retinopathy Screening in Rural India"
+  sih_problem_id: "SIH26038"
+  version: "0.1.0"
+  random_seed: 42
+  deterministic: true
+
+compute:
+  device: "cuda"  # Options: "cuda", "cpu", "mps"
+  num_workers: 4
+  pin_memory: true
+
+data:
+  image_size: [512, 512]
+  num_classes: 5
+  class_names:
+    0: "No DR"
+    1: "Mild NPDR"
+    2: "Moderate NPDR"
+    3: "Severe NPDR"
+    4: "Proliferative DR"
+  referable_threshold_grade: 2  # ICDR >= 2 indicates Referable DR
+  split_ratio:
+    train: 0.70
+    val: 0.15
+    test: 0.15
+
+# Default Quality Gate settings (Experimental defaults to be tuned in Phase 8)
+quality_gate:
+  sharpness:
+    metric: "laplacian_variance"
+    threshold: 100.0
+  illumination:
+    min_p90: 40.0
+    max_saturation_pct: 5.0
+  field_of_view:
+    min_retinal_area_pct: 70.0
+  max_recapture_attempts: 3
+
+uncertainty:
+  entropy_threshold: 0.65
+  margin_threshold: 0.20
+
+targets:
+  referable_sensitivity: 0.90
+  referable_specificity: 0.85
+  expected_calibration_error: 0.05

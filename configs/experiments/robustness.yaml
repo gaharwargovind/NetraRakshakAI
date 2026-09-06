@@ -1,0 +1,26 @@
+experiment:
+  id: "E009"
+  name: "Robustness Stress-Testing"
+  description: "Evaluate performance and entropy correlation under synthetic corruptions"
+  seed: 42
+  parent_experiment: "E008"
+
+perturbations:
+  blur:
+    sigma_range: [1.0, 5.0]
+    steps: 5
+  noise:
+    var_range: [0.01, 0.08]
+    steps: 5
+  underexposure:
+    gamma_range: [0.4, 0.9]
+    steps: 5
+  overexposure:
+    gamma_range: [1.1, 1.6]
+    steps: 5
+  contrast:
+    factor_range: [0.3, 0.8]
+    steps: 5
+  compression:
+    quality_range: [80, 20]
+    steps: 5
