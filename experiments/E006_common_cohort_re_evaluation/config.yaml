@@ -1,0 +1,8 @@
+experiment_id: E006_common_cohort_re_evaluation
+evaluation_date: 2026-09-06
+cohort:
+  manifest: data/processed/aptos/validation.csv
+  total_samples: 601
+models:
+  e004_checkpoint: NOT_FOUND_ON_DISK (Historical E004 metrics utilized)
+  e006_checkpoint: /Users/govindchandragahrwar/programming/NetraRakshakAi/dr-screening/models/checkpoints/E006_best_model.pt

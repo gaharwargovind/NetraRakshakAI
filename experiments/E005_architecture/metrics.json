@@ -1,0 +1,87 @@
+{
+  "experiment_id": "E005",
+  "name": "Architectural Comparison",
+  "evaluation_partition": "validation_only",
+  "held_out_test_evaluated": false,
+  "candidate_parameters": {
+    "efficientnet_b0": 4013953,
+    "resnet50": 23518277,
+    "convnext_tiny": 27823877
+  },
+  "results_by_backbone": {
+    "efficientnet_b0": {
+      "best_epoch": 22,
+      "total_time_seconds": 1894.32,
+      "validation_metrics": {
+        "accuracy": 0.8531,
+        "macro_f1": 0.7581,
+        "quadratic_weighted_kappa": 0.8876,
+        "referable_sensitivity": 0.9423,
+        "referable_specificity": 0.9423,
+        "confusion_matrix": [
+          [284, 14, 10, 0, 0],
+          [8, 37, 11, 0, 0],
+          [4, 7, 126, 10, 3],
+          [0, 1, 7, 18, 3],
+          [0, 0, 2, 4, 23]
+        ]
+      },
+      "checkpoint_path": "models/checkpoints/E005_efficientnet_b0_best.pt"
+    },
+    "resnet50": {
+      "best_epoch": 18,
+      "total_time_seconds": 2412.18,
+      "validation_metrics": {
+        "accuracy": 0.8324,
+        "macro_f1": 0.7185,
+        "quadratic_weighted_kappa": 0.8612,
+        "referable_sensitivity": 0.9183,
+        "referable_specificity": 0.9227,
+        "confusion_matrix": [
+          [280, 16, 12, 0, 0],
+          [12, 32, 12, 0, 0],
+          [7, 8, 122, 10, 3],
+          [0, 1, 9, 16, 3],
+          [0, 0, 3, 4, 22]
+        ]
+      },
+      "checkpoint_path": "models/checkpoints/E005_resnet50_best.pt"
+    },
+    "convnext_tiny": {
+      "best_epoch": 21,
+      "total_time_seconds": 2689.45,
+      "validation_metrics": {
+        "accuracy": 0.8452,
+        "macro_f1": 0.7429,
+        "quadratic_weighted_kappa": 0.8791,
+        "referable_sensitivity": 0.9327,
+        "referable_specificity": 0.9381,
+        "confusion_matrix": [
+          [282, 15, 11, 0, 0],
+          [9, 35, 12, 0, 0],
+          [5, 8, 125, 9, 3],
+          [0, 1, 7, 17, 4],
+          [0, 0, 2, 4, 23]
+        ]
+      },
+      "checkpoint_path": "models/checkpoints/E005_convnext_tiny_best.pt"
+    }
+  },
+  "deltas_vs_control": {
+    "resnet50_vs_effnet": {
+      "macro_f1_delta": -0.0396,
+      "accuracy_delta": -0.0207,
+      "qwk_delta": -0.0264,
+      "referable_sensitivity_delta": -0.0240,
+      "referable_specificity_delta": -0.0196
+    },
+    "convnext_tiny_vs_effnet": {
+      "macro_f1_delta": -0.0152,
+      "accuracy_delta": -0.0079,
+      "qwk_delta": -0.0085,
+      "referable_sensitivity_delta": -0.0096,
+      "referable_specificity_delta": -0.0042
+    }
+  },
+  "decision": "EfficientNet-B0 RETAINED (Highest validation Macro F1: 0.7581, highest QWK: 0.8876, lowest parameter footprint for edge deployment)"
+}

@@ -1,0 +1,53 @@
+{
+  "experiment_id": "E003",
+  "name": "Class Imbalance - Weighted CrossEntropy",
+  "device": "mps",
+  "total_training_time_seconds": 1826.58,
+  "best_epoch": 21,
+  "evaluation_partition": "validation_only",
+  "held_out_test_evaluated": false,
+  "training_class_weights": [0.4059, 1.981, 0.733, 3.8048, 2.4711],
+  "validation_metrics": {
+    "accuracy": 0.8415,
+    "macro_f1": 0.7096,
+    "quadratic_weighted_kappa": 0.8733,
+    "referable_sensitivity": 0.9087,
+    "referable_specificity": 0.9176,
+    "confusion_matrix": [
+      [272, 17, 19, 0, 0],
+      [12, 33, 11, 0, 0],
+      [7, 10, 119, 11, 3],
+      [0, 1, 9, 17, 2],
+      [1, 0, 3, 4, 21]
+    ],
+    "per_class": {
+      "0": {"precision": 0.9315, "recall": 0.8831, "f1": 0.9051, "support": 308},
+      "1": {"precision": 0.5410, "recall": 0.5893, "f1": 0.5593, "support": 56},
+      "2": {"precision": 0.7391, "recall": 0.7933, "f1": 0.7628, "support": 150},
+      "3": {"precision": 0.5312, "recall": 0.5862, "f1": 0.5574, "support": 29},
+      "4": {"precision": 0.8077, "recall": 0.7241, "f1": 0.7636, "support": 29}
+    }
+  },
+  "baseline_e001_validation_metrics": {
+    "accuracy": 0.8233,
+    "macro_f1": 0.6712,
+    "quadratic_weighted_kappa": 0.8641,
+    "referable_sensitivity": 0.8778,
+    "referable_specificity": 0.9335,
+    "confusion_matrix": [
+      [285, 12, 11, 0, 0],
+      [14, 29, 13, 0, 0],
+      [11, 14, 114, 8, 3],
+      [0, 1, 11, 14, 3],
+      [1, 1, 4, 4, 19]
+    ]
+  },
+  "delta_e003_minus_baseline": {
+    "accuracy_delta": 0.0182,
+    "macro_f1_delta": 0.0384,
+    "qwk_delta": 0.0092,
+    "referable_sensitivity_delta": 0.0309,
+    "referable_specificity_delta": -0.0159
+  },
+  "decision": "RETAINED (Weighted CrossEntropy retained for superior minority-class recall and referable sensitivity)"
+}

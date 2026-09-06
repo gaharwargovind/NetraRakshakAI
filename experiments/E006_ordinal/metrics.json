@@ -1,0 +1,336 @@
+{
+  "experiment_id": "E006",
+  "name": "Ordinal Reformulation of Prediction Objective",
+  "device": "mps",
+  "total_training_time_seconds": 10008.22,
+  "best_epoch": 15,
+  "evaluation_partition": "validation_only",
+  "active_validation_samples": 601,
+  "held_out_test_evaluated": false,
+  "ordinal_pos_weights": [
+    1.0505,
+    1.614,
+    7.3229,
+    12.936
+  ],
+  "validation_metrics": {
+    "accuracy": 0.7537437603993344,
+    "macro_f1": 0.5970168685238477,
+    "quadratic_weighted_kappa": 0.8914348071362047,
+    "referable_sensitivity": 0.873015873015873,
+    "referable_specificity": 0.9455587392550143,
+    "confusion_matrix": [
+      [
+        294,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        12,
+        23,
+        18,
+        1,
+        0
+      ],
+      [
+        7,
+        22,
+        84,
+        43,
+        9
+      ],
+      [
+        0,
+        0,
+        6,
+        16,
+        13
+      ],
+      [
+        0,
+        3,
+        7,
+        6,
+        36
+      ]
+    ],
+    "per_class": {
+      "0": {
+        "name": "No DR",
+        "precision": 0.939297124600639,
+        "recall": 0.9966101694915255,
+        "f1": 0.9671052631578947,
+        "support": 295
+      },
+      "1": {
+        "name": "Mild NPDR",
+        "precision": 0.46938775510204084,
+        "recall": 0.42592592592592593,
+        "f1": 0.44660194174757284,
+        "support": 54
+      },
+      "2": {
+        "name": "Moderate NPDR",
+        "precision": 0.7304347826086957,
+        "recall": 0.509090909090909,
+        "f1": 0.6,
+        "support": 165
+      },
+      "3": {
+        "name": "Severe NPDR",
+        "precision": 0.24242424242424243,
+        "recall": 0.45714285714285713,
+        "f1": 0.31683168316831684,
+        "support": 35
+      },
+      "4": {
+        "name": "Proliferative DR",
+        "precision": 0.6206896551724138,
+        "recall": 0.6923076923076923,
+        "f1": 0.6545454545454545,
+        "support": 52
+      }
+    },
+    "five_class": {
+      "accuracy": 0.7537437603993344,
+      "macro_f1": 0.5970168685238477,
+      "quadratic_weighted_kappa": 0.8914348071362047,
+      "per_class": {
+        "0": {
+          "name": "No DR",
+          "precision": 0.939297124600639,
+          "recall": 0.9966101694915255,
+          "f1": 0.9671052631578947,
+          "support": 295
+        },
+        "1": {
+          "name": "Mild NPDR",
+          "precision": 0.46938775510204084,
+          "recall": 0.42592592592592593,
+          "f1": 0.44660194174757284,
+          "support": 54
+        },
+        "2": {
+          "name": "Moderate NPDR",
+          "precision": 0.7304347826086957,
+          "recall": 0.509090909090909,
+          "f1": 0.6,
+          "support": 165
+        },
+        "3": {
+          "name": "Severe NPDR",
+          "precision": 0.24242424242424243,
+          "recall": 0.45714285714285713,
+          "f1": 0.31683168316831684,
+          "support": 35
+        },
+        "4": {
+          "name": "Proliferative DR",
+          "precision": 0.6206896551724138,
+          "recall": 0.6923076923076923,
+          "f1": 0.6545454545454545,
+          "support": 52
+        }
+      },
+      "confusion_matrix": [
+        [
+          294,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          23,
+          18,
+          1,
+          0
+        ],
+        [
+          7,
+          22,
+          84,
+          43,
+          9
+        ],
+        [
+          0,
+          0,
+          6,
+          16,
+          13
+        ],
+        [
+          0,
+          3,
+          7,
+          6,
+          36
+        ]
+      ],
+      "normalized_confusion_matrix": [
+        [
+          0.9966101694915255,
+          0.003389830508474576,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.2222222222222222,
+          0.42592592592592593,
+          0.3333333333333333,
+          0.018518518518518517,
+          0.0
+        ],
+        [
+          0.04242424242424243,
+          0.13333333333333333,
+          0.509090909090909,
+          0.2606060606060606,
+          0.05454545454545454
+        ],
+        [
+          0.0,
+          0.0,
+          0.17142857142857143,
+          0.45714285714285713,
+          0.37142857142857144
+        ],
+        [
+          0.0,
+          0.057692307692307696,
+          0.1346153846153846,
+          0.11538461538461539,
+          0.6923076923076923
+        ]
+      ]
+    },
+    "referable_dr": {
+      "referable_threshold": 2,
+      "sensitivity": 0.873015873015873,
+      "specificity": 0.9455587392550143,
+      "precision": 0.9205020920502092,
+      "f1": 0.8961303462321792,
+      "confusion_matrix": [
+        [
+          330,
+          19
+        ],
+        [
+          32,
+          220
+        ]
+      ],
+      "counts": {
+        "tp": 220,
+        "fn": 32,
+        "tn": 330,
+        "fp": 19
+      }
+    },
+    "probability_metrics": {
+      "multiclass_roc_auc_ovr_macro": 0.919755774524585,
+      "multiclass_roc_auc_ovr_weighted": 0.9528474502313657,
+      "per_class_roc_auc": {
+        "0": 0.9988368228647391,
+        "1": 0.917529961405647,
+        "2": 0.9136363636363637,
+        "3": 0.8393235739525493,
+        "4": 0.9294521507636262
+      },
+      "referable_roc_auc": 0.9804771001046073
+    },
+    "mean_absolute_error": 0.2961730449251248,
+    "exact_agreement_rate": 0.7537437603993344,
+    "adjacent_error_rate": 0.20133111480865223,
+    "severe_error_rate": 0.04492512479201331
+  },
+  "baseline_e004_validation_metrics": {
+    "accuracy": 0.8531,
+    "macro_f1": 0.7581,
+    "quadratic_weighted_kappa": 0.8876,
+    "referable_sensitivity": 0.9423,
+    "referable_specificity": 0.9423,
+    "confusion_matrix": [
+      [
+        284,
+        14,
+        10,
+        0,
+        0
+      ],
+      [
+        8,
+        37,
+        11,
+        0,
+        0
+      ],
+      [
+        4,
+        7,
+        126,
+        10,
+        3
+      ],
+      [
+        0,
+        1,
+        7,
+        18,
+        3
+      ],
+      [
+        0,
+        0,
+        2,
+        4,
+        23
+      ]
+    ],
+    "per_class": {
+      "0": {
+        "precision": 0.9595,
+        "recall": 0.9221,
+        "f1": 0.9404,
+        "support": 308
+      },
+      "1": {
+        "precision": 0.6271,
+        "recall": 0.6607,
+        "f1": 0.6435,
+        "support": 56
+      },
+      "2": {
+        "precision": 0.8077,
+        "recall": 0.84,
+        "f1": 0.8235,
+        "support": 150
+      },
+      "3": {
+        "precision": 0.5625,
+        "recall": 0.6207,
+        "f1": 0.5902,
+        "support": 29
+      },
+      "4": {
+        "precision": 0.7931,
+        "recall": 0.7931,
+        "f1": 0.7931,
+        "support": 29
+      }
+    }
+  },
+  "delta_e006_minus_e004": {
+    "accuracy_delta": -0.0994,
+    "macro_f1_delta": -0.1611,
+    "qwk_delta": 0.0038,
+    "referable_sensitivity_delta": -0.0693,
+    "referable_specificity_delta": 0.0033
+  },
+  "decision": "REJECTED (E004 categorical baseline retained)"
+}

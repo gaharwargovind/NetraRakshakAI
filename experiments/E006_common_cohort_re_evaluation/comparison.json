@@ -1,0 +1,10 @@
+{
+  "accuracy_delta": -0.428807,
+  "macro_f1_delta": -0.520492,
+  "quadratic_weighted_kappa_delta": -0.69716,
+  "referable_sensitivity_delta": -0.470078,
+  "referable_specificity_delta": -0.208776,
+  "mae_delta": 1.104372,
+  "adjacent_error_rate_delta": 0.042854,
+  "severe_error_rate_delta": 0.386
+}

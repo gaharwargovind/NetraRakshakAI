@@ -1,0 +1,36 @@
+decoding:
+  threshold: 0.5
+experiment:
+  description: Evaluate cumulative ordinal regression with guaranteed monotonic cutoffs
+    against E004 categorical baseline
+  id: E006
+  name: Ordinal Reformulation of Prediction Objective
+  parent_experiment: E004
+  seed: 42
+governance:
+  expected_active_val_count: 601
+  lock_test_set: true
+  quarantined_val_count: 0
+  total_val_records: 601
+model:
+  backbone: efficientnet_b0
+  dropout_rate: 0.2
+  head_type: ordered_threshold
+  num_classes: 5
+  num_ordinal_tasks: 4
+  pretrained: true
+training:
+  batch_size: 16
+  early_stopping_patience: 7
+  epochs: 30
+  learning_rate: 0.0003
+  loss: cumulative_ordinal_weighted_bce
+  lr_scheduler: cosine_annealing
+  optimizer: AdamW
+  pos_weights:
+  - 0.9712
+  - 1.461
+  - 6.4906
+  - 11.3557
+  primary_metric: macro_f1
+  weight_decay: 1.0e-05

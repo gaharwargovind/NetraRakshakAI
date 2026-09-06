@@ -1,0 +1,2 @@
+ID,Experiment,Dataset,Backbone,Input,Loss,Augmentation,Macro F1,Sensitivity,Specificity,AUC,Status
+E001,Baseline EfficientNet-B0,APTOS 2019,EfficientNet-B0,Crop + Resize 512x512,CrossEntropy,None,0.6628,0.8688,0.9281,,COMPLETE

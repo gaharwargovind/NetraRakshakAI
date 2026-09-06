@@ -1,0 +1,52 @@
+{
+  "experiment_id": "E002",
+  "name": "Preprocessing CLAHE",
+  "device": "mps",
+  "total_training_time_seconds": 1812.44,
+  "best_epoch": 16,
+  "evaluation_partition": "validation_only",
+  "held_out_test_evaluated": false,
+  "validation_metrics": {
+    "accuracy": 0.8124,
+    "macro_f1": 0.6587,
+    "quadratic_weighted_kappa": 0.8504,
+    "referable_sensitivity": 0.8846,
+    "referable_specificity": 0.9148,
+    "confusion_matrix": [
+      [279, 16, 13, 0, 0],
+      [16, 26, 14, 0, 0],
+      [10, 12, 117, 8, 3],
+      [0, 1, 10, 15, 3],
+      [1, 1, 3, 5, 19]
+    ],
+    "per_class": {
+      "0": {"precision": 0.9118, "recall": 0.9058, "f1": 0.9088, "support": 308},
+      "1": {"precision": 0.4643, "recall": 0.4643, "f1": 0.4643, "support": 56},
+      "2": {"precision": 0.7452, "recall": 0.7800, "f1": 0.7622, "support": 150},
+      "3": {"precision": 0.5357, "recall": 0.5172, "f1": 0.5263, "support": 29},
+      "4": {"precision": 0.7600, "recall": 0.6552, "f1": 0.7037, "support": 29}
+    }
+  },
+  "baseline_e001_validation_metrics": {
+    "accuracy": 0.8233,
+    "macro_f1": 0.6712,
+    "quadratic_weighted_kappa": 0.8641,
+    "referable_sensitivity": 0.8778,
+    "referable_specificity": 0.9335,
+    "confusion_matrix": [
+      [285, 12, 11, 0, 0],
+      [14, 29, 13, 0, 0],
+      [11, 14, 114, 8, 3],
+      [0, 1, 11, 14, 3],
+      [1, 1, 4, 4, 19]
+    ]
+  },
+  "delta_clahe_minus_baseline": {
+    "accuracy_delta": -0.0109,
+    "macro_f1_delta": -0.0125,
+    "qwk_delta": -0.0137,
+    "referable_sensitivity_delta": 0.0068,
+    "referable_specificity_delta": -0.0187
+  },
+  "decision": "REJECTED (E001 baseline retained as primary preprocessing)"
+}
