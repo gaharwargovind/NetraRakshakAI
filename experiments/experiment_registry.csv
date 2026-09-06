@@ -1,7 +1,8 @@
-ID,Experiment,Dataset,Backbone,Input,Loss,Augmentation,Macro F1,Sensitivity,Specificity,AUC,Status
-E001,Baseline EfficientNet-B0,APTOS 2019,EfficientNet-B0,Crop + Resize 512x512,CrossEntropy,None,0.6628,0.8688,0.9281,,COMPLETE
-E002,Preprocessing CLAHE,APTOS 2019,EfficientNet-B0,Crop + Resize 512x512 + CLAHE,CrossEntropy,None,0.6587,0.8846,0.9148,,COMPLETE (Validation Only - Rejected)
-E003,Class Balance Weighted-CE,APTOS 2019,EfficientNet-B0,Crop + Resize 512x512,Weighted CrossEntropy,None,0.7096,0.9087,0.9176,,COMPLETE (Validation Only - Retained)
-E004,Conservative Augmentation,APTOS 2019,EfficientNet-B0,Crop + Resize 512x512 + Augmentation,Weighted CrossEntropy,HFlip + Rot10 + Affine + Jitter,0.7581,0.9423,0.9423,,COMPLETE (Validation Only - Retained)
-E005,Architectural Comparison,APTOS 2019,EffNet-B0 vs ResNet50 vs ConvNeXt,Crop + Resize 512x512 + Augmentation,Weighted CrossEntropy,HFlip + Rot10 + Affine + Jitter,0.7581,0.9423,0.9423,,COMPLETE (Validation Only - EffNet Retained)
-E006,Ordinal Reformulation,APTOS 2019,EfficientNet-B0,Crop + Resize 512x512 + Augmentation,Cumulative Ordinal Weighted-BCE,HFlip + Rot10 + Affine + Jitter,0.597,0.873,0.9456,,COMPLETE (Validation Only - REJECTED)
+ID,Experiment,Dataset,Backbone,Input,Loss,Augmentation,Macro F1,Sensitivity,Specificity,AUC,Status,experiment_id,experiment_name,backbone,loss,macro_f1,accuracy,qwk,referable_sensitivity,referable_specificity,validation_samples,status,notes
+E001,Baseline EfficientNet-B0,APTOS 2019,EfficientNet-B0,Crop + Resize 512x512,CrossEntropy,,0.6628,0.8688,0.9281,,COMPLETE,,,,,,,,,,,,
+E002,Preprocessing CLAHE,APTOS 2019,EfficientNet-B0,Crop + Resize 512x512 + CLAHE,CrossEntropy,,0.6587,0.8846,0.9148,,COMPLETE (Validation Only - Rejected),,,,,,,,,,,,
+E003,Class Balance Weighted-CE,APTOS 2019,EfficientNet-B0,Crop + Resize 512x512,Weighted CrossEntropy,,0.7096,0.9087,0.9176,,COMPLETE (Validation Only - Retained),,,,,,,,,,,,
+E004,Conservative Augmentation,APTOS 2019,EfficientNet-B0,Crop + Resize 512x512 + Augmentation,Weighted CrossEntropy,HFlip + Rot10 + Affine + Jitter,0.7581,0.9423,0.9423,,COMPLETE (Validation Only - Retained),,,,,,,,,,,,
+E005,Architectural Comparison,APTOS 2019,EffNet-B0 vs ResNet50 vs ConvNeXt,Crop + Resize 512x512 + Augmentation,Weighted CrossEntropy,HFlip + Rot10 + Affine + Jitter,0.7581,0.9423,0.9423,,COMPLETE (Validation Only - EffNet Retained),,,,,,,,,,,,
+E006,Ordinal Reformulation,APTOS 2019,EfficientNet-B0,Crop + Resize 512x512 + Augmentation,Cumulative Ordinal Weighted-BCE,HFlip + Rot10 + Affine + Jitter,0.597,0.873,0.9456,,COMPLETE (Validation Only - REJECTED),,,,,,,,,,,,
+,,,,,,,,,,,,E007,Multiclass Focal Loss,efficientnet_b0,multiclass_focal_loss,0.7123,0.8403,0.9156,0.9444,0.9427,601.0,VALIDATED,Single factor vs E004. Best epoch 4.

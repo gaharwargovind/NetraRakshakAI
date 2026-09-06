@@ -1,0 +1,35 @@
+experiment:
+  id: "E007"
+  name: "Multiclass Focal Loss Optimization"
+  description: "Evaluate multiclass Focal Loss (gamma=2.0, alpha=1.0) against E004 categorical baseline"
+  seed: 42
+  parent_experiment: "E004"
+
+model:
+  backbone: "efficientnet_b0"
+  pretrained: true
+  num_classes: 5
+  dropout_rate: 0.2
+
+training:
+  epochs: 30
+  batch_size: 16
+  learning_rate: 0.0003
+  weight_decay: 1e-05
+  optimizer: "AdamW"
+  loss: "multiclass_focal_loss"
+  focal_loss:
+    gamma: 2.0
+    alpha: 1.0
+  lr_scheduler: "cosine_annealing"
+  early_stopping_patience: 7
+  primary_metric: "macro_f1"
+
+data:
+  image_size: [512, 512]
+  crop_retina: true
+  augmentation: "e004_conservative"
+
+governance:
+  expected_active_val_count: 601
+  lock_test_set: true
