@@ -1,0 +1,13 @@
+experiment:
+  id: "E008"
+  name: "Explainability and Clinical Evidence Validation"
+  type: "explainability_audit"
+  target_checkpoint: "models/checkpoints/E007_best_model.pt"
+  target_layer: "backbone.features[-1]"
+  method: "Grad-CAM"
+  resolution: [512, 512]
+  cases_evaluated: 10
+  governance:
+    train_or_fine_tune: false
+    modify_weights: false
+    access_test_set: false

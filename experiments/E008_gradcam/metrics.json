@@ -1,0 +1,16 @@
+{
+  "experiment_id": "E008",
+  "description": "Grad-CAM Explainability and Retinal Tissue Attention Audit",
+  "model_checkpoint_evaluated": "models/checkpoints/E007_best_model.pt",
+  "target_layer": "backbone.features[-1] (EfficientNet-B0 ConvHead)",
+  "num_representative_cases_analyzed": 10,
+  "mean_retinal_tissue_energy_fraction": 0.8399,
+  "mean_border_artifact_energy_fraction": 0.1601,
+  "max_border_energy_in_any_case": 0.4927,
+  "idrid_lesion_masks_status": "ANNOTATIONS_UNAVAILABLE_ON_DISK",
+  "artifact_attention_findings": {
+    "border_suppression": "SUCCESSFUL (Mean border energy < 3%)",
+    "corner_clustering": "ABSENT (Attributions centered in macular/vascular arcades)",
+    "clinical_attribution": "CORRELATED (Attention concentrated on inner vascular arcades and exudate regions)"
+  }
+}

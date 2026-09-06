@@ -1,0 +1,11 @@
+case_type,id_code,true_grade,pred_grade,confidence,target_class,p0,p1,p2,p3,p4,retinal_tissue_energy_ratio,border_artifact_energy_ratio,figure_path
+correct_grade_0,a06e5ac695ce,0,0,1.0,0,1.0,0.0,0.0,0.0,0.0,0.8154,0.1846,figures/correct_grade_0_a06e5ac695ce.png
+correct_grade_1,f72ef9ceeaa8,1,1,0.7472,1,0.115,0.7472,0.1361,0.0007,0.0011,0.9984,0.0016,figures/correct_grade_1_f72ef9ceeaa8.png
+correct_grade_2,a3957df90a78,2,2,0.8823,2,0.0042,0.0285,0.8823,0.047,0.038,0.9591,0.0409,figures/correct_grade_2_a3957df90a78.png
+correct_grade_3,dbfd238b3468,3,3,0.6781,3,0.0037,0.0096,0.1511,0.6781,0.1574,0.9352,0.0648,figures/correct_grade_3_dbfd238b3468.png
+correct_grade_4,fa59221cf464,4,4,0.9375,4,0.0018,0.0148,0.0106,0.0353,0.9375,0.5073,0.4927,figures/correct_grade_4_fa59221cf464.png
+referable_true_positive,fa59221cf464,4,4,0.9375,4,0.0018,0.0148,0.0106,0.0353,0.9375,0.5073,0.4927,figures/referable_true_positive_fa59221cf464.png
+referable_false_positive,eba3acc42197,1,2,0.792,2,0.0242,0.122,0.792,0.0156,0.0461,0.8976,0.1024,figures/referable_false_positive_eba3acc42197.png
+referable_false_negative,025a169a0bb0,2,0,0.9249,0,0.9249,0.0473,0.0214,0.0025,0.0038,0.9502,0.0498,figures/referable_false_negative_025a169a0bb0.png
+uncertain_low_confidence,2cbfc6182ba2,2,2,0.3086,2,0.07,0.1185,0.3086,0.2369,0.2661,0.8782,0.1218,figures/uncertain_low_confidence_2cbfc6182ba2.png
+difficult_misclassified,025a169a0bb0,2,0,0.9249,0,0.9249,0.0473,0.0214,0.0025,0.0038,0.9502,0.0498,figures/difficult_misclassified_025a169a0bb0.png
