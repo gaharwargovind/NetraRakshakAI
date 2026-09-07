@@ -112,3 +112,4 @@ models/checkpoints/*.pt
 __pycache__/
 .pytest_cache/
 .DS_Store
+printf '\n# Runtime-generated API artifacts\nartifacts/\n' >> .gitignore
