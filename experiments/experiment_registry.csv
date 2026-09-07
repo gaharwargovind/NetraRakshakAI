@@ -6,3 +6,4 @@ E004,Conservative Augmentation,APTOS 2019,EfficientNet-B0,Crop + Resize 512x512 
 E005,Architectural Comparison,APTOS 2019,EffNet-B0 vs ResNet50 vs ConvNeXt,Crop + Resize 512x512 + Augmentation,Weighted CrossEntropy,HFlip + Rot10 + Affine + Jitter,0.7581,0.9423,0.9423,,COMPLETE (Validation Only - EffNet Retained),,,,,,,,,,,,
 E006,Ordinal Reformulation,APTOS 2019,EfficientNet-B0,Crop + Resize 512x512 + Augmentation,Cumulative Ordinal Weighted-BCE,HFlip + Rot10 + Affine + Jitter,0.597,0.873,0.9456,,COMPLETE (Validation Only - REJECTED),,,,,,,,,,,,
 ,,,,,,,,,,,,E007,Multiclass Focal Loss,efficientnet_b0,multiclass_focal_loss,0.7123,0.8403,0.9156,0.9444,0.9427,601.0,VALIDATED,Single factor vs E004. Best epoch 4.
+,,,,,,,,,,,,E009,Class-Balanced Focal Loss,efficientnet_b0,class_balanced_focal_loss,0.7133,0.8403,0.9079,0.9127,0.9456,601.0,VALIDATED,Single factor vs E007. Best epoch 11.

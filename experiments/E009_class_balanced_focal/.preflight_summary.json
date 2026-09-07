@@ -1,0 +1,21 @@
+{
+  "train_samples": 2397,
+  "class_counts": {
+    "0": 1228,
+    "1": 252,
+    "2": 629,
+    "3": 116,
+    "4": 172
+  },
+  "alpha_formula": "alpha_c = N_train / (C * N_c)",
+  "alpha_values": [
+    0.3904,
+    1.9024,
+    0.7622,
+    4.1328,
+    2.7872
+  ],
+  "e007_checkpoint_sha256": "a61710e11557bb7d1be60ed488e5bdf5b88c92d16c76441513bbfa4d8b94cc3c",
+  "validation_manifest_count": 601,
+  "test_manifest_count": 602
+}

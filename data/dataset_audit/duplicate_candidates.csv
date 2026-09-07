@@ -1,0 +1,7 @@
+cluster_id,dataset,image_1,image_2,hash_method,hamming_distance,audit_action
+CL_001,aptos2019,1632e92224e7.png,1632e92224e7_dup.png,dhash,0,co_locate_partition
+CL_002,aptos2019,4da7b8a51e24.png,4da7b8a51e24_burst.png,phash,2,co_locate_partition
+CL_003,aptos2019,8e967a57a8a7.png,8e967a57a8a7_alt.png,phash,3,co_locate_partition
+CL_004,aptos2019,9a64c4c8e7e1.png,9a64c4c8e7e1_v2.png,phash,1,co_locate_partition
+CL_005,eyepacs,1002_left.jpeg,1002_left_rep.jpeg,sha256,0,drop_exact_duplicate
+CL_006,eyepacs,2041_right_black.jpeg,2042_left_black.jpeg,sha256,0,flag_unusable_blank

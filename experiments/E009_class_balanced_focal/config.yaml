@@ -1,0 +1,38 @@
+experiment:
+  id: "E009"
+  name: "Class-Balanced Focal Loss"
+  parent_experiment: "E007"
+  seed: 42
+  description: "Evaluate class-balanced alpha weighting on validated E007 multiclass Focal Loss"
+
+model:
+  backbone: "efficientnet_b0"
+  pretrained: true
+  num_classes: 5
+  dropout_rate: 0.2
+
+training:
+  epochs: 30
+  batch_size: 16
+  learning_rate: 0.0003
+  weight_decay: 1e-05
+  optimizer: "AdamW"
+  loss: "class_balanced_focal_loss"
+  focal_loss:
+    gamma: 2.0
+    alpha: [0.3904, 1.9024, 0.7622, 4.1328, 2.7872]
+    alpha_formula: "alpha_c = N_train / (C * N_c)"
+    training_class_counts: {0: 1228, 1: 252, 2: 629, 3: 116, 4: 172}
+  lr_scheduler: "cosine_annealing"
+  early_stopping_patience: 7
+  primary_metric: "macro_f1"
+
+data:
+  image_size: [512, 512]
+  crop_retina: true
+  augmentation: "e004_conservative"
+
+governance:
+  control_experiment: "E007"
+  validation_count: 601
+  lock_test_set: true
