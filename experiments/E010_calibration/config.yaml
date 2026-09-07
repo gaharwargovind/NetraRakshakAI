@@ -1,0 +1,16 @@
+experiment:
+  id: "E010"
+  name: "E007 Post-Hoc Confidence Calibration"
+  type: "post_hoc_calibration"
+  target_checkpoint: "models/checkpoints/E007_best_model.pt"
+  method: "Temperature Scaling"
+  fitted_temperature: 0.7785
+  optimization:
+    loss: "Negative Log-Likelihood (CrossEntropyLoss)"
+    optimizer: "L-BFGS"
+    max_iter: 100
+  governance:
+    modify_weights: false
+    retrain_model: false
+    access_test_set: false
+    validation_records: 601

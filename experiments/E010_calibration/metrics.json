@@ -1,0 +1,43 @@
+{
+  "experiment_id": "E010",
+  "description": "E007 Post-Hoc Confidence Calibration via Temperature Scaling",
+  "model_evaluated": "models/checkpoints/E007_best_model.pt",
+  "validation_manifest": "data/processed/aptos/validation.csv",
+  "validation_samples": 601,
+  "fitted_temperature": 0.7785,
+  "prediction_invariance_verified": true,
+  "calibration_scope_note": "Validation set was utilized to fit T; serves as in-distribution post-hoc calibration proof-of-concept.",
+  "pre_calibration": {
+    "multiclass_ece": 0.0797,
+    "multiclass_mce": 0.1717,
+    "multiclass_brier": 0.2503,
+    "multiclass_nll": 0.4736,
+    "referable_ece": 0.0438,
+    "referable_brier": 0.0528,
+    "referable_nll": 0.1781
+  },
+  "post_calibration": {
+    "multiclass_ece": 0.0377,
+    "multiclass_mce": 0.1213,
+    "multiclass_brier": 0.2404,
+    "multiclass_nll": 0.4533,
+    "referable_ece": 0.0359,
+    "referable_brier": 0.051,
+    "referable_nll": 0.1691
+  },
+  "deltas": {
+    "delta_multiclass_ece": -0.042,
+    "delta_multiclass_nll": -0.0203,
+    "delta_multiclass_brier": -0.0099,
+    "delta_referable_ece": -0.0079,
+    "delta_referable_nll": -0.009,
+    "delta_referable_brier": -0.0018
+  },
+  "classifier_metrics_invariant": {
+    "macro_f1": 0.7122564342357016,
+    "qwk": 0.9156326846758172,
+    "accuracy": 0.8402662229617305,
+    "referable_sensitivity": 0.9444444444444444,
+    "referable_specificity": 0.9426934097421203
+  }
+}
