@@ -1,0 +1,13 @@
+experiment_id: E014_saliency_audit
+phase: PHASE_E014_COUNTERFACTUAL_SALIENCY_AUDIT
+base_model: E007
+target_layer: model.model.features[-1]
+governance:
+  e007_weights: FROZEN
+  aptos_test_split: UNTOUCHED
+  lesion_overlap_metric: DISABLED_NO_GROUND_TRUTH_MASKS
+counterfactual:
+  threshold: 0.50
+  ablation_modes:
+    - salient_masked
+    - background_masked

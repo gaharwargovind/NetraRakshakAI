@@ -1,0 +1,26 @@
+{
+  "experiment_id": "E014",
+  "name": "Counterfactual & Visual Saliency Audit",
+  "step_0_audit": {
+    "idrid_lesion_masks_available": false,
+    "status_statement": "Lesion-level quantitative validation unavailable for this cohort.",
+    "iou_dice_computed": false
+  },
+  "target_layer": "model.model.features[-1]",
+  "total_cases_analyzed": 10,
+  "counterfactual_summary": {
+    "mean_salient_ablation_delta_p_ref": -0.1613,
+    "mean_background_ablation_delta_p_ref": -0.1627,
+    "salient_ablation_grade_shift_rate": 0.7
+  },
+  "saliency_leakage_summary": {
+    "mean_retinal_energy_fraction": 1.0,
+    "mean_non_retinal_leakage_fraction": 0.0,
+    "max_non_retinal_leakage_fraction": 0.0
+  },
+  "governance": {
+    "e007_checkpoint_sha256": "a61710e11557bb7d1be60ed488e5bdf5b88c92d16c76441513bbfa4d8b94cc3c",
+    "aptos_test_accessed": false,
+    "scientific_mandate": "Grad-CAM provides attribution evidence regarding image regions influencing the model output; clinical validation of gradability remains necessary."
+  }
+}
