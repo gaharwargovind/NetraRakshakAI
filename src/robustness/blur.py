@@ -1,7 +1,12 @@
-"""Gaussian and motion blur corruption generators."""
+import cv2
 import numpy as np
+from PIL import Image
 
-
-def apply_blur_corruption(image: np.ndarray, sigma: float) -> np.ndarray:
-    """Apply Gaussian blur to test out-of-focus tolerance."""
-    raise NotImplementedError("Blur generation is scheduled for Phase 11.")
+def apply_gaussian_blur(img: Image.Image, kernel_size: int, sigma: float) -> Image.Image:
+    if kernel_size <= 1 or sigma <= 0:
+        return img.copy()
+    if kernel_size % 2 == 0:
+        kernel_size += 1
+    arr = np.array(img)
+    blurred = cv2.GaussianBlur(arr, (kernel_size, kernel_size), sigmaX=sigma, sigmaY=sigma)
+    return Image.fromarray(blurred)

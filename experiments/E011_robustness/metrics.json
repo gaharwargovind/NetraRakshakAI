@@ -1,0 +1,52 @@
+{
+  "experiment_id": "E011",
+  "description": "E007 Robustness Stress Test under Controlled Tele-Screening Perturbations",
+  "model_checkpoint": "models/checkpoints/E007_best_model.pt",
+  "calibration_temperature_frozen": 0.7785,
+  "clean_baseline": {
+    "accuracy": 0.8403,
+    "macro_f1": 0.7123,
+    "weighted_f1": 0.8387,
+    "qwk": 0.9156,
+    "mae": 0.1997,
+    "referable_sensitivity": 0.9444,
+    "referable_specificity": 0.9427,
+    "macro_roc_auc": 0.9475,
+    "recall_g0": 0.9864,
+    "recall_g1": 0.5926,
+    "recall_g2": 0.8121,
+    "recall_g3": 0.4857,
+    "recall_g4": 0.5962,
+    "uncal_ece": 0.0797,
+    "cal_ece": 0.0377,
+    "uncal_ref_ece": 0.0438,
+    "cal_ref_ece": 0.0359
+  },
+  "total_conditions_evaluated": 24,
+  "sensitivity_failure_points": {
+    "gaussian_blur": {
+      "first_failure_severity": null,
+      "note": "Remained >= 90% sensitivity across all tested levels"
+    },
+    "gaussian_noise": {
+      "first_failure_severity": 2,
+      "condition": "Mild sensor noise (sigma=15)",
+      "sensitivity": 0.5952,
+      "macro_f1": 0.2844
+    },
+    "brightness": {
+      "first_failure_severity": null,
+      "note": "Remained >= 90% sensitivity across all tested levels"
+    },
+    "contrast": {
+      "first_failure_severity": 1,
+      "condition": "Severe contrast loss (-60%)",
+      "sensitivity": 0.869,
+      "macro_f1": 0.5515
+    },
+    "jpeg_compression": {
+      "first_failure_severity": null,
+      "note": "Remained >= 90% sensitivity across all tested levels"
+    }
+  }
+}

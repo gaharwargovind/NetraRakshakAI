@@ -1,7 +1,9 @@
-"""Exposure variation corruption generators."""
-import numpy as np
+from PIL import Image, ImageEnhance
 
+def adjust_brightness(img: Image.Image, factor: float) -> Image.Image:
+    enhancer = ImageEnhance.Brightness(img)
+    return enhancer.enhance(factor)
 
-def apply_exposure_corruption(image: np.ndarray, gamma: float) -> np.ndarray:
-    """Apply underexposure or overexposure scaling."""
-    raise NotImplementedError("Exposure corruption is scheduled for Phase 11.")
+def adjust_contrast(img: Image.Image, factor: float) -> Image.Image:
+    enhancer = ImageEnhance.Contrast(img)
+    return enhancer.enhance(factor)
