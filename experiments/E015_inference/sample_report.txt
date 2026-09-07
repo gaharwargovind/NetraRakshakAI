@@ -1,0 +1,16 @@
+=================================================================
+     NETRARAKSHAK AI: CLINICAL TRIAGE SCREENING REPORT
+=================================================================
+Encounter ID:        sample_encounter_01
+Timestamp:           2026-09-07T17:10:34.148948+00:00
+Quality Gate Status: PASS
+Predicted Severity:  ICDR Grade 1
+Referral Status:     NON-REFERABLE
+Calibrated Conf.:    69.57%
+Triage Action:       ROUTINE_MONITORING
+Clinical Rationale:  Non-referable diabetic retinopathy (ICDR Grade 1). Subject to clinical screening protocol.
+-----------------------------------------------------------------
+MANDATORY SCIENTIFIC & REGULATORY NOTICE:
+This tool provides AI-assisted screening evidence, NOT a definitive
+ophthalmological diagnosis. Independent clinical review remains necessary.
+=================================================================

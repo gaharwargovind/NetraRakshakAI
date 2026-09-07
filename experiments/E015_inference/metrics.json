@@ -1,0 +1,38 @@
+{
+  "experiment_id": "E015",
+  "name": "End-to-End Inference Pipeline Integration",
+  "benchmark_n": 10,
+  "latency_breakdown": {
+    "input_sanitization": {
+      "mean_ms": 77.59,
+      "std_ms": 54.52
+    },
+    "iqa_gate": {
+      "mean_ms": 76.35,
+      "std_ms": 53.72
+    },
+    "preprocessing": {
+      "mean_ms": 16.94,
+      "std_ms": 11.7
+    },
+    "e007_inference": {
+      "mean_ms": 10.33,
+      "std_ms": 0.75
+    },
+    "gradcam": {
+      "mean_ms": 62.73,
+      "std_ms": 12.18
+    },
+    "total_pipeline": {
+      "mean_ms": 466.35,
+      "std_ms": 229.62
+    }
+  },
+  "frozen_invariants": {
+    "e007_checkpoint_sha256": "a61710e11557bb7d1be60ed488e5bdf5b88c92d16c76441513bbfa4d8b94cc3c",
+    "temperature": 0.7785,
+    "iqa_threshold_policy": "Tier 2 Experimental (APTOS validation calibrated)",
+    "referable_decision_boundary": "predicted_grade >= 2"
+  },
+  "governance_mandate": "AI-assisted screening tool; benchmark latencies reflect single-sample local execution and do not guarantee clinical deployment throughput."
+}

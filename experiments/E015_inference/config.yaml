@@ -1,0 +1,18 @@
+experiment_id: E015_inference
+phase: PHASE_E015_END_TO_END_INFERENCE
+base_model: E007
+checkpoint:
+  path: models/checkpoints/E007_best_model.pt
+  sha256: a61710e11557bb7d1be60ed488e5bdf5b88c92d16c76441513bbfa4d8b94cc3c
+calibration:
+  temperature: 0.7785
+  status: FROZEN_DEVELOPMENT
+decision_rule:
+  referable: "predicted_grade >= 2"
+quality_gate:
+  status: EXPERIMENTAL_ENGINEERING
+triage_actions:
+  - RECAPTURE_OR_HUMAN_REVIEW
+  - HUMAN_REVIEW
+  - SPECIALIST_REFERRAL
+  - ROUTINE_MONITORING
