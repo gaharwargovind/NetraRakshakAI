@@ -1,0 +1,24 @@
+experiment_id: E013_iqa
+phase: PHASE_E013_IMAGE_QUALITY_ASSESSMENT
+base_model: E007
+governance:
+  e007_weights: FROZEN
+  e012_external_validation: FROZEN
+  aptos_test_split: UNTOUCHED
+  clinical_claim_policy: CONSERVATIVE_UNVALIDATED
+
+threshold_policy:
+  tier_1_engineering:
+    fov_coverage_min: 0.30
+    fov_coverage_max: 1.00
+  tier_2_experimental:
+    laplacian_variance_min: 4.0
+    edge_density_min: 0.0005
+    mean_intensity_min: 30.0
+    mean_intensity_max: 160.0
+    dark_fraction_max: 0.15
+    bright_fraction_max: 0.05
+    percentile_spread_90_min: 20.0
+    noise_mad_max: 4.0
+  tier_3_clinical:
+    status: NONE_ESTABLISHED

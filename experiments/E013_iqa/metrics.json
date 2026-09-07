@@ -1,0 +1,284 @@
+{
+  "experiment_id": "E013",
+  "name": "Image Quality Assessment (IQA) Benchmark",
+  "clean_validation": {
+    "total_evaluated": 601,
+    "passed_count": 537,
+    "rejected_count": 64,
+    "false_rejection_rate": 0.1065
+  },
+  "downstream_e007_impact": {
+    "unfiltered": {
+      "n": 601,
+      "accuracy": 0.8403,
+      "macro_f1": 0.7123,
+      "qwk": 0.9156,
+      "referable_sensitivity": 0.9444,
+      "referable_specificity": 0.9427
+    },
+    "iqa_pass": {
+      "n": 537,
+      "accuracy": 0.8473,
+      "macro_f1": 0.7127,
+      "qwk": 0.9239,
+      "referable_sensitivity": 0.9533,
+      "referable_specificity": 0.9381
+    },
+    "iqa_fail_diagnostic": {
+      "n": 64,
+      "accuracy": 0.7812,
+      "macro_f1": 0.7053,
+      "qwk": 0.8447,
+      "referable_sensitivity": 0.8947,
+      "referable_specificity": 1.0
+    }
+  },
+  "clean_distributions": {
+    "fov_coverage": {
+      "mean": 0.7612,
+      "std": 0.1325,
+      "p01": 0.4735,
+      "p05": 0.4749,
+      "median": 0.7912,
+      "p95": 0.9058,
+      "p99": 0.9895
+    },
+    "laplacian_variance": {
+      "mean": 31.2068,
+      "std": 24.5331,
+      "p01": 4.14,
+      "p05": 5.69,
+      "median": 16.95,
+      "p95": 67.39,
+      "p99": 95.0
+    },
+    "edge_density": {
+      "mean": 0.0059,
+      "std": 0.0075,
+      "p01": 0.0,
+      "p05": 0.0001,
+      "median": 0.0027,
+      "p95": 0.0206,
+      "p99": 0.034
+    },
+    "mean_intensity": {
+      "mean": 88.2341,
+      "std": 21.3817,
+      "p01": 39.06,
+      "p05": 49.42,
+      "median": 92.7,
+      "p95": 118.84,
+      "p99": 130.69
+    },
+    "dark_fraction": {
+      "mean": 0.0008,
+      "std": 0.0016,
+      "p01": 0.0,
+      "p05": 0.0,
+      "median": 0.0001,
+      "p95": 0.0022,
+      "p99": 0.0073
+    },
+    "bright_fraction": {
+      "mean": 0.0002,
+      "std": 0.0009,
+      "p01": 0.0,
+      "p05": 0.0,
+      "median": 0.0,
+      "p95": 0.0015,
+      "p99": 0.0047
+    },
+    "illumination_uniformity": {
+      "mean": 0.8499,
+      "std": 0.0772,
+      "p01": 0.6073,
+      "p05": 0.6825,
+      "median": 0.8676,
+      "p95": 0.9365,
+      "p99": 0.9518
+    },
+    "intensity_std": {
+      "mean": 17.5792,
+      "std": 5.6738,
+      "p01": 8.9,
+      "p05": 10.35,
+      "median": 16.6,
+      "p95": 28.87,
+      "p99": 34.81
+    },
+    "percentile_spread_90": {
+      "mean": 49.1947,
+      "std": 18.3906,
+      "p01": 23.0,
+      "p05": 28.0,
+      "median": 45.0,
+      "p95": 86.0,
+      "p99": 112.0
+    },
+    "noise_mad": {
+      "mean": 0.5147,
+      "std": 0.7101,
+      "p01": 0.0,
+      "p05": 0.0,
+      "median": 0.0,
+      "p95": 1.48,
+      "p99": 1.48
+    }
+  },
+  "perturbation_rejection_rates": {
+    "gaussian_blur": [
+      {
+        "severity": 1,
+        "description": "Subtle blur (k=3, s=0.5)",
+        "rejected_count": 88,
+        "rejection_rate": 0.1464
+      },
+      {
+        "severity": 2,
+        "description": "Mild defocus (k=5, s=1.0)",
+        "rejected_count": 345,
+        "rejection_rate": 0.574
+      },
+      {
+        "severity": 3,
+        "description": "Moderate defocus (k=9, s=2.0)",
+        "rejected_count": 598,
+        "rejection_rate": 0.995
+      },
+      {
+        "severity": 4,
+        "description": "Severe blur (k=15, s=3.5)",
+        "rejected_count": 601,
+        "rejection_rate": 1.0
+      },
+      {
+        "severity": 5,
+        "description": "Extreme blur (k=21, s=5.0)",
+        "rejected_count": 601,
+        "rejection_rate": 1.0
+      }
+    ],
+    "gaussian_noise": [
+      {
+        "severity": 1,
+        "description": "Low sensor noise (sigma=5)",
+        "rejected_count": 19,
+        "rejection_rate": 0.0316
+      },
+      {
+        "severity": 2,
+        "description": "Mild sensor noise (sigma=15)",
+        "rejected_count": 601,
+        "rejection_rate": 1.0
+      },
+      {
+        "severity": 3,
+        "description": "Moderate sensor noise (sigma=25)",
+        "rejected_count": 601,
+        "rejection_rate": 1.0
+      },
+      {
+        "severity": 4,
+        "description": "High sensor noise (sigma=40)",
+        "rejected_count": 601,
+        "rejection_rate": 1.0
+      },
+      {
+        "severity": 5,
+        "description": "Severe sensor noise (sigma=60)",
+        "rejected_count": 601,
+        "rejection_rate": 1.0
+      }
+    ],
+    "brightness": [
+      {
+        "severity": 1,
+        "description": "Severe underexposure (-60%)",
+        "rejected_count": 472,
+        "rejection_rate": 0.7854
+      },
+      {
+        "severity": 2,
+        "description": "Moderate underexposure (-30%)",
+        "rejected_count": 138,
+        "rejection_rate": 0.2296
+      },
+      {
+        "severity": 3,
+        "description": "Moderate overexposure (+30%)",
+        "rejected_count": 58,
+        "rejection_rate": 0.0965
+      },
+      {
+        "severity": 4,
+        "description": "Severe overexposure (+60%)",
+        "rejected_count": 159,
+        "rejection_rate": 0.2646
+      }
+    ],
+    "contrast": [
+      {
+        "severity": 1,
+        "description": "Severe contrast loss (-60%)",
+        "rejected_count": 343,
+        "rejection_rate": 0.5707
+      },
+      {
+        "severity": 2,
+        "description": "Moderate contrast loss (-30%)",
+        "rejected_count": 152,
+        "rejection_rate": 0.2529
+      },
+      {
+        "severity": 3,
+        "description": "Moderate contrast increase (+30%)",
+        "rejected_count": 44,
+        "rejection_rate": 0.0732
+      },
+      {
+        "severity": 4,
+        "description": "Severe contrast increase (+60%)",
+        "rejected_count": 32,
+        "rejection_rate": 0.0532
+      }
+    ],
+    "jpeg_compression": [
+      {
+        "severity": 1,
+        "description": "Light compression (Q=80)",
+        "rejected_count": 75,
+        "rejection_rate": 0.1248
+      },
+      {
+        "severity": 2,
+        "description": "Moderate compression (Q=60)",
+        "rejected_count": 75,
+        "rejection_rate": 0.1248
+      },
+      {
+        "severity": 3,
+        "description": "Aggressive compression (Q=40)",
+        "rejected_count": 180,
+        "rejection_rate": 0.2995
+      },
+      {
+        "severity": 4,
+        "description": "Severe compression (Q=20)",
+        "rejected_count": 74,
+        "rejection_rate": 0.1231
+      },
+      {
+        "severity": 5,
+        "description": "Extreme compression (Q=10)",
+        "rejected_count": 5,
+        "rejection_rate": 0.0083
+      }
+    ]
+  },
+  "governance": {
+    "e007_checkpoint_sha256": "a61710e11557bb7d1be60ed488e5bdf5b88c92d16c76441513bbfa4d8b94cc3c",
+    "aptos_val_sha256": "5c24e42544a57c52847db3f951cb1a98a9601d4eb56bbd1194152238c9ff3c5f",
+    "aptos_test_sha256": "76afe03ec8e5c830a7bd583d1d8aae0ecb58e311d4a41a4b9dad15e2b20d3740",
+    "scientific_mandate": "IQA is an upstream safety mechanism intended to identify potentially ungradable images; clinical validation is still required."
+  }
+}

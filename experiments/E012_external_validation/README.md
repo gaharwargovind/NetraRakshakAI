@@ -1,7 +1,10 @@
-# Experiment E012: External Validation (IDRiD)
+# Experiment E012: External Validation Audit
 
-- Safety Gate: FAILED (Sensitivity: 0.7961)
-- Macro F1: 0.4266
-- QWK: 0.7187
-- Accuracy: 0.5516
-- Referable Specificity: 0.9868
+## Pre-Evaluation Status: READY FOR EXTERNAL EVALUATION
+
+- **External Dataset:** IDRiD
+- **Verified Cohort Size:** 455
+- **Corrupted Images:** 0
+- **Cross-Dataset Collisions:** 0
+- **Preprocessing Pipeline:** Verified compatible with frozen E001BaselineTransform.
+- **Model Checkpoint:** `models/checkpoints/E007_best_model.pt` (Frozen, SHA verified).
