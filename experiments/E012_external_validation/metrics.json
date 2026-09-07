@@ -1,0 +1,100 @@
+{
+  "experiment_id": "E012",
+  "dataset": "IDRiD",
+  "cohort_size": 455,
+  "primary_metrics": {
+    "macro_f1": 0.4266,
+    "referable_sensitivity": 0.7961,
+    "referable_specificity": 0.9868,
+    "qwk": 0.7187
+  },
+  "secondary_metrics": {
+    "accuracy": 0.5516,
+    "weighted_f1": 0.5359,
+    "mae": 0.5934,
+    "adjacent_grade_error": 0.3363,
+    "severe_grade_error": 0.1121
+  },
+  "internal_vs_external_deltas": {
+    "delta_macro_f1": -0.2857,
+    "delta_qwk": -0.1969,
+    "delta_sensitivity": -0.1483,
+    "delta_specificity": 0.0441,
+    "delta_accuracy": -0.2837
+  },
+  "per_class": {
+    "0": {
+      "precision": 0.7902,
+      "recall": 0.876,
+      "f1": 0.8309,
+      "support": 129
+    },
+    "1": {
+      "precision": 0.1324,
+      "recall": 0.4091,
+      "f1": 0.2,
+      "support": 22
+    },
+    "2": {
+      "precision": 0.573,
+      "recall": 0.6538,
+      "f1": 0.6108,
+      "support": 156
+    },
+    "3": {
+      "precision": 0.3913,
+      "recall": 0.2143,
+      "f1": 0.2769,
+      "support": 84
+    },
+    "4": {
+      "precision": 0.45,
+      "recall": 0.1406,
+      "f1": 0.2143,
+      "support": 64
+    }
+  },
+  "confusion_matrix": [
+    [
+      113,
+      15,
+      1,
+      0,
+      0
+    ],
+    [
+      12,
+      9,
+      1,
+      0,
+      0
+    ],
+    [
+      12,
+      36,
+      102,
+      2,
+      4
+    ],
+    [
+      2,
+      3,
+      54,
+      18,
+      7
+    ],
+    [
+      4,
+      5,
+      20,
+      26,
+      9
+    ]
+  ],
+  "calibration": {
+    "raw_ece": 0.0438,
+    "calibrated_ece": 0.0934,
+    "raw_ref_ece": 0.1676,
+    "calibrated_ref_ece": 0.1661
+  }
+}

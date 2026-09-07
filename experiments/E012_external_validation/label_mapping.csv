@@ -1,0 +1,6 @@
+external_label,external_definition,mapped_icdr_grade,mapping_confidence,mapping_basis,notes
+0,No DR signs,0,VERIFIED_EXACT,ICDR 5-Grade Standard,No lesions
+1,Mild NPDR,1,VERIFIED_EXACT,ICDR 5-Grade Standard,Microaneurysms only
+2,Moderate NPDR,2,VERIFIED_EXACT,ICDR 5-Grade Standard,Referable DR threshold
+3,Severe NPDR,3,VERIFIED_EXACT,ICDR 5-Grade Standard,4-2-1 rule satisfied
+4,Proliferative DR,4,VERIFIED_EXACT,ICDR 5-Grade Standard,Neovascularization present

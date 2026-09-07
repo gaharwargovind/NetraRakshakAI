@@ -1,0 +1,22 @@
+{
+  "status": "READY FOR EXTERNAL EVALUATION",
+  "dataset_name": "IDRiD",
+  "dataset_path": "/Users/govindchandragahrwar/programming/NetraRakshakAi/dr-screening/data/raw/idrid",
+  "total_images_discovered": 455,
+  "total_verified_cohort": 455,
+  "class_distribution": {
+    "0": 129,
+    "1": 22,
+    "2": 156,
+    "3": 84,
+    "4": 64
+  },
+  "corrupted_count": 0,
+  "unmatched_labels_count": 0,
+  "cross_dataset_duplicates_found": 0,
+  "preprocessing_compatibility": "PASS (E001BaselineTransform verified on all cohort images)",
+  "e007_checkpoint_sha256": "a61710e11557bb7d1be60ed488e5bdf5b88c92d16c76441513bbfa4d8b94cc3c",
+  "aptos_val_sha256": "5c24e42544a57c52847db3f951cb1a98a9601d4eb56bbd1194152238c9ff3c5f",
+  "aptos_test_sha256": "76afe03ec8e5c830a7bd583d1d8aae0ecb58e311d4a41a4b9dad15e2b20d3740",
+  "frozen_temperature": 0.7785
+}
