@@ -16,6 +16,7 @@ pyyaml>=6.0.1,<7.0.0
 tqdm>=4.66.0,<5.0.0
 reportlab>=4.0.0,<4.3.0
 
+
 # Interactive Application & Dashboards
 streamlit>=1.30.0,<1.37.0
 
@@ -29,3 +30,6 @@ mypy>=1.6.0,<1.11.0
 fastapi>=0.110.0
 uvicorn>=0.28.0
 python-multipart>=0.0.9
+
+
+matplotlib>=3.8.0,<3.10.0
