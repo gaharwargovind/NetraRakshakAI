@@ -109,6 +109,8 @@ wandb/
 runs/data/raw/
 models/checkpoints/*.pt
 *.pt
+!models/checkpoints/
+!models/checkpoints/E007_best_model.pt
 __pycache__/
 .pytest_cache/
 .DS_Store
