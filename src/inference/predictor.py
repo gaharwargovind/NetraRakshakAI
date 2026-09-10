@@ -3,6 +3,7 @@
 from datetime import datetime, timezone
 import hashlib
 import logging
+import os
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, Union
 import cv2
@@ -21,6 +22,7 @@ logger = logging.getLogger("inference_pipeline")
 EXPECTED_E007_SHA = "a61710e11557bb7d1be60ed488e5bdf5b88c92d16c76441513bbfa4d8b94cc3c"
 FROZEN_TEMPERATURE = 0.7785
 LOW_CONFIDENCE_THRESHOLD = 0.60  # Documented engineering placeholder; not clinically validated
+DISABLE_GRADCAM = os.getenv("NETRA_DISABLE_GRADCAM", "").strip().lower() in {"1", "true", "yes", "on"}
 
 
 def verify_checkpoint_sha256(path: Path) -> str:
@@ -217,7 +219,7 @@ class ScreeningPredictor:
         cam_overlay = None
         gradcam_status = "disabled"
 
-        if generate_saliency and self.gradcam:
+        if generate_saliency and self.gradcam and not DISABLE_GRADCAM:
             try:
                 # Grad-CAM requires an autograd graph for the attribution backward pass.
                 # Keep E007 weights frozen; enable gradients only for this explanation step.
@@ -248,6 +250,9 @@ class ScreeningPredictor:
             except Exception as e:
                 logger.warning("Grad-CAM generation failed gracefully: %s", e)
                 gradcam_status = "unavailable"
+
+        if generate_saliency and DISABLE_GRADCAM:
+            gradcam_status = "disabled"
 
         # Step 6: Escalation and Recommendation Triage
         if referable:
