@@ -48,8 +48,12 @@ class EfficientNetGradCAM:
         Generates Grad-CAM heatmap normalized to [0, 1].
         input_tensor: Shape (1, 3, H, W)
         """
-        self.model.zero_grad()
-        logits = self.model(input_tensor)
+        # Grad-CAM requires an autograd graph even though the E007
+        # model weights remain frozen for inference.
+        with torch.enable_grad():
+            self.model.zero_grad()
+            logits = self.model(input_tensor)
+
         probs = F.softmax(logits, dim=-1).squeeze(0)
 
         if target_class is None:

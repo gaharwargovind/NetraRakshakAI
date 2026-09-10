@@ -219,9 +219,20 @@ class ScreeningPredictor:
 
         if generate_saliency and self.gradcam:
             try:
-                # Enable input gradients for backward attribution hook
-                input_tensor_grad = input_tensor.clone().detach().requires_grad_(True)
-                heatmap, _, _ = self.gradcam.generate(input_tensor_grad, target_class=predicted_grade)
+                # Grad-CAM requires an autograd graph for the attribution backward pass.
+                # Keep E007 weights frozen; enable gradients only for this explanation step.
+                input_tensor_grad = (
+                    input_tensor.clone()
+                    .detach()
+                    .requires_grad_(True)
+                )
+
+                with torch.enable_grad():
+                    heatmap, _, _ = self.gradcam.generate(
+                        input_tensor_grad,
+                        target_class=predicted_grade
+                    )
+
                 cam_heatmap = heatmap
 
                 # Build visual overlay
